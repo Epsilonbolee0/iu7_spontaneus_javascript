@@ -1,7 +1,6 @@
 "use strict";
 
 // База студента - обёртка над массивом.
-// Лучше использовать Map.
 class Base {
 	constructor() {
 		this.students = [];

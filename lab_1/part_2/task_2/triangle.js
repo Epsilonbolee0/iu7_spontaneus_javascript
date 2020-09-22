@@ -1,5 +1,6 @@
 "use strict";
 
+// Класс треугольника
 class Triangle {
 	constructor(a, b, c) {
 		this.a = a;
@@ -7,22 +8,26 @@ class Triangle {
 		this.c = c;
 	}
 
+	// Проверка существования треугольника
 	exists() {
 		return ((this.a + this.b > this.c) && 
 				(this.b + this.c > this.a) && 
 				(this.a + this.c > this.b));
 	}
 
+	// Поиск периметра треугольника
 	perimeter() {
 		return this.a + this.b + this.c;
 	}
 
+	// Поиск площади треугольника по формуле Герона
 	area() {
 		let p = this.perimeter() / 2;
 		return Math.sqrt(p * 
 						(p - this.a) * (p - this.b) * (p - this.c));
 	}
 
+	// Проверка прямоугольности треугольника по обратной теореме Пифагора
 	static sqr = value => value * value;
 	isRectangular() {
 		return (Triangle.sqr(this.a) + Triangle.sqr(this.b) == Triangle.sqr(this.c) ||
