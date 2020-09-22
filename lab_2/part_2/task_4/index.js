@@ -1,10 +1,16 @@
 "use strict";
 
+// Класс сервера с использованием express
 class Server {
+	// Объекты библиотек задаются как методы класса
+	// Для создания шаблонных HTML-файлов используется библиотека pug
 	static fs = require("fs");
 	static express = require("express");
 	static pug = require("pug");
 
+	// При создании экземпляра происходит проверка доступности порта
+	// Для использования изображений со стороны сервера используется express.static
+	// После создания происходят бинды маршрутов
 	constructor(port = 5015) {
 		this.app = Server.express();
 		this.port = port;
@@ -23,6 +29,7 @@ class Server {
 		console.log(" Server started succesfully!");
 	}
 
+	// Метод класса для получения делителей на отрезке
 	static dividersOnRange(a, b, c) {
 		const array = [];
 		for (let number = a; number <= b; number++) {
@@ -34,6 +41,7 @@ class Server {
 		return array;
 	}
 
+	// Метод получения делителей при запросе
 	getDividers(request, response) {
 		const a = parseInt(request.query.a);
 		const b = parseInt(request.query.b);
@@ -69,6 +77,7 @@ class Server {
 		}
 	}
 
+	// Метод получения страницы
 	getPage(request, response) {
 		const nameString = request.query.p;
 		if (Server.fs.existsSync(nameString)) {

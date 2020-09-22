@@ -19,8 +19,7 @@ function getMaxNesting(dumping_file = "nesting.txt") {
 	while (true) {
 		try {
 			string = JSON.stringify(object);
-		}
-		catch(error) {
+		} catch(error) {
 			console.log(" Max nesting is " + (value - 1) + "!");
 			console.log(" Resulting JSON is dumped into " + dumping_file + "!");
 			fs.writeFileSync(dumping_file, string);

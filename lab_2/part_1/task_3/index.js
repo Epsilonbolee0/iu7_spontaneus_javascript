@@ -30,8 +30,7 @@ function getFiles() {
 			let content;
 			if (fs.existsSync(path)) {
 				content =  fs.readFileSync(path, "utf8");
-			}
-			else {
+			} else {
 				console.error(" File is unavalible!");
 				return false;
 			}

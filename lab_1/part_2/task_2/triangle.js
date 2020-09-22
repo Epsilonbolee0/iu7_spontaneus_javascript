@@ -23,8 +23,7 @@ class Triangle {
 	// Поиск площади треугольника по формуле Герона
 	area() {
 		let p = this.perimeter() / 2;
-		return Math.sqrt(p * 
-						(p - this.a) * (p - this.b) * (p - this.c));
+		return Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
 	}
 
 	// Проверка прямоугольности треугольника по обратной теореме Пифагора
@@ -67,5 +66,6 @@ function test() {
 	b.isRectangular() ? console.log("Да!") : console.log("Нет!");
 	console.log();
 }
+
 
 test();

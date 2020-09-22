@@ -6,7 +6,7 @@ function readArray(filename = "result.txt") {
 	const fs = require("fs");
 
 	const n = parseInt(readlineSync.question(" Input N: "));
-	if (isNaN(n) or n < 0) {
+	if (isNaN(n) || n < 0) {
 		console.log( " Number of files is wrong!");
 		return false;
 	}

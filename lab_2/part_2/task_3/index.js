@@ -1,5 +1,6 @@
 "use strict";
 
+// Генератор HTML-файлов для набора полей ввода
 function generateHTML(path = "input.html") {
 	const fs = require("fs");
 	const readlineSync = require("readline-sync");
@@ -18,12 +19,14 @@ function generateHTML(path = "input.html") {
 		array.push(readlineSync.question(" Enter field name: "));
 	}
 
+	// Метод генерации заголовка (head)
 	function generateHead(title = "Шаблонная форма") {
 		let stringHTML = 
 		`<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset="UTF-8">\n\t<title>${title}</title>\n</head>\n`;
 		return stringHTML;
 	}
 
+	// Метод генерации одного поля ввода (input)
 	function generateInput(field_name) {
 		let stringHTML = 
 		`		<p>Введите ${field_name}</p>
@@ -32,6 +35,7 @@ function generateHTML(path = "input.html") {
 		return stringHTML;
 	}
 
+	// Метод генерации тела (body)
 	function generateBody(page_header, query_address, array) {
 		let stringHTML = 
 		`<body>\n\t<h1>${page_header}</h1>\n\t<form method = "GET" action="/${query_address}">\n`;
@@ -47,5 +51,6 @@ function generateHTML(path = "input.html") {
 	let stringHTML = generateHead(title) + generateBody(page_header, query_address, array);
 	fs.writeFileSync(path, stringHTML);
 }	
+
 
 generateHTML();

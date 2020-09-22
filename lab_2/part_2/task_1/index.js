@@ -1,10 +1,14 @@
 "use strict";
 
+// Класс сервера express
 class Server {
+	// Объекты используемых библиотек задаются как переменные класса
 	static fs = require("fs");
 	static express = require("express");
 	static pug = require("pug");
 
+	// Создание экземпляра сервера с проверкой свободности порта
+	// После запуска идёт привязка маршрутов
 	constructor(port = 5015) {
 		this.app = Server.express();
 		this.port = port;
@@ -22,6 +26,7 @@ class Server {
 		console.log(" Server started succesfully!");
 	}
 
+	// Запрос максимума из трёх
 	getMaxOfThree(request, response) {
 
 		const a = parseInt(request.query.a);
@@ -40,6 +45,7 @@ class Server {
 		}
 	}
 
+	// Запрос на получение страницы
 	getPage(request, response) {
 		const nameString = request.query.p;
 		if (Server.fs.existsSync(nameString)) {
