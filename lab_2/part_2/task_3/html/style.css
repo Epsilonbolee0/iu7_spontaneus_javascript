@@ -1,0 +1,31 @@
+body {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	padding: 35px;
+	background: url(https://cdn.discordapp.com/attachments/454170646348562454/757697484549128193/puchkov.gif);
+}
+
+h1 {
+    color: white;
+}
+
+h2, p {
+	color: white;
+}
+
+h3 {
+    color: green;
+}
+
+
+input {
+	border: 1px solid #cccccc;
+   border-radius: 3px;
+   -webkit-border-radius: 3px;
+   -moz-border-radius: 3px;
+   background: #ffffff !important; 
+   outline: none; 
+   height: 24px; 
+   width: 120px; 
+   font-size: 11px;
+   font-family: Tahoma;
+}

@@ -1,0 +1,27 @@
+body {
+    padding: 30px;
+    background: wheat;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+
+.btn-class {
+    padding: 6px;
+    background: blueviolet;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+}
+
+input {
+  background-color: pink;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+p {
+	color: blueviolet;
+}

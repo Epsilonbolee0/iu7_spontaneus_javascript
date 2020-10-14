@@ -36,10 +36,8 @@ function getFiles() {
 			}
 			contents[filename] = content;
 		}
-	}
-	
+	}	
 	return contents;
 }
-
 
 console.log(getFiles());

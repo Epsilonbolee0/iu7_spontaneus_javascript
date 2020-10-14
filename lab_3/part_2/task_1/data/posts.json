@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Nekopara",
+        "description": "Рабство, женщины, сладости, коты",
+        "age": 18
+    },
+    {
+        "name": "Human fall flat",
+        "description": "Драка за бочку онлайн",
+        "age": 6
+    },
+    {
+        "name": "Бесконечное лето",
+        "description": "Девочки, совок, хорошая музыка",
+        "age": 14
+    },
+    {
+        "name": "Divinity: Original Sin 2",
+        "description": "Пацаны, кастуйте, я отойду",
+        "age": 16
+    },
+    {
+        "name": "Factorio",
+        "description": "Завод после завода - отдых",
+        "age": 10
+    },
+    {
+        "name": "Игра в очко",
+        "description": "Обманывай, выигрывай, рискуй, проигрывай",
+        "age": 21
+    },
+    {
+        "name": "DoTA 2",
+        "description": "Приятный кооперативный симулятор оскорблений",
+        "age": 0
+    },
+    {
+        "name": "Minecraft",
+        "description": "Лучшая игра обоих тысячелетий",
+        "age": 6
+    },
+    {
+        "name": "Fate/Stay Night",
+        "description": "Визуальная новелла для фанатов",
+        "age": 18
+    }
+]

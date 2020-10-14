@@ -1,0 +1,28 @@
+[
+    ["nekit", {
+        "password": "12345",
+        "hobbie": "boxing",
+        "age": 18
+    }],
+
+    ["dagestan2020", {
+        "password": "ahmatsila",
+        "hobbie": "wrestling",
+        "age": 6
+    }],
+    ["js_lover",  {
+        "password": "===",
+        "hobbie": "coding",
+        "age": 14
+    }],
+    ["admin", {
+       "password": "password",
+        "hobbie": "music",
+        "age": 99
+    }],
+    ["clown", {
+        "password": "marmelad",
+        "hobbie": "rats",
+        "age": 10
+    }]
+]
