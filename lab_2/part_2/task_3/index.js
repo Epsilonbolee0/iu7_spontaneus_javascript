@@ -25,29 +25,17 @@ class Server {
 		}
 
 		this.app.get("/page", this.getPage);
-		this.app.get("/max_of_three", this.getMaxOfThree);
+		this.app.get("/generate_html", this.generateHTML);
 		console.log(" Server started succesfully!");
 	}
 
-	// Запрос максимума из трёх
+
+	// Запрос генерации
 	generateHTML(request, response) {
-
-		const fs = require("fs");
-		const readlineSync = require("readline-sync");
-
-		const query_address = readlineSync.question(" Enter query address: ");
-		const title = readlineSync.question(" Enter title: ");
-		const page_header = readlineSync.question(" Enter page header: ");
-		const n = parseInt(readlineSync.question(" Enter number of inputs: "));
-		if (isNaN(n) || n <= 0) {
-			console.log(" Invalid number of inputs!");
-			return false;
-		}
-
-		const array = [];
-		for (let i = 0; i < n; i++) {
-			array.push(readlineSync.question(" Enter field name: "));
-		}
+		const query_address = request.query.query_address;
+		const title = request.query.title;
+		const page_header = request.query.page_header;
+		const names = request.query.names.split(',');
 
 		// Метод генерации заголовка (head)
 		function generateHead(title = "Шаблонная форма") {
@@ -69,7 +57,7 @@ class Server {
 		function generateBody(page_header, query_address, array) {
 			let stringHTML = 
 			`<body>\n\t<h1>${page_header}</h1>\n\t<form method = "GET" action="/${query_address}">\n`;
-			for (let element of array) {
+			for (let element of names) {
 				stringHTML += generateInput(element);
 			}
 			stringHTML += 
@@ -77,9 +65,8 @@ class Server {
 			return stringHTML;
 		}
 
-		console.log(array);
-		let stringHTML = generateHead(title) + generateBody(page_header, query_address, array);
-		fs.writeFileSync(path, stringHTML);
+		let stringHTML = generateHead(title) + generateBody(page_header, query_address, names);
+		response.end(stringHTML);
 	}	
 
 
@@ -97,12 +84,5 @@ class Server {
 
 }
 
-
 let server = new Server(5015);
-
-// Генератор HTML-файлов для набора полей ввода
-function generateHTML(path = "input.html") {
 	
-
-
-generateHTML();
